@@ -1,0 +1,175 @@
+digraph wifi_optimizer_flow {
+  graph [
+    label="RTX WiFi Optimizer Flow",
+    labelloc="t",
+    fontsize=26,
+    fontname="Liberation Sans",
+    bgcolor="#ffffff",
+    rankdir=TB,
+    splines=spline,
+    nodesep=0.42,
+    ranksep=0.48,
+    pad=0.16,
+    margin=0.10,
+    outputorder=edgesfirst
+  ];
+
+  node [
+    shape=plain,
+    fontname="Liberation Sans",
+    fontsize=12,
+    fontcolor="#0f172a"
+  ];
+
+  edge [
+    fontname="Liberation Sans",
+    fontsize=9,
+    color="#475569",
+    fontcolor="#334155",
+    arrowsize=0.72,
+    penwidth=1.2
+  ];
+
+  start [
+    shape=oval,
+    style="filled",
+    label="Start",
+    fillcolor="#ecfeff",
+    color="#0891b2",
+    penwidth=1.5,
+    margin="0.11,0.07"
+  ];
+
+  sources [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#93c5fd">
+      <TR><TD BGCOLOR="#dbeafe" COLSPAN="5"><FONT POINT-SIZE="15"><B>1. Sources</B></FONT></TD></TR>
+      <TR>
+        <TD PORT="photos" BGCOLOR="#ffffff">Room photos<BR/>or frames</TD>
+        <TD PORT="mesh" BGCOLOR="#eff6ff">Existing<BR/>PLY / OBJ</TD>
+        <TD BGCOLOR="#ffffff">Config JSON</TD>
+        <TD BGCOLOR="#ffffff">CLI flags</TD>
+        <TD BGCOLOR="#ffffff">Receiver list</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  image_prep [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#5eead4">
+      <TR><TD BGCOLOR="#ccfbf1" COLSPAN="5"><FONT POINT-SIZE="15"><B>2. Image Prep</B></FONT></TD></TR>
+      <TR>
+        <TD BGCOLOR="#ffffff">prepare-images</TD>
+        <TD BGCOLOR="#ffffff">RGB PNG<BR/>sequence</TD>
+        <TD BGCOLOR="#ffffff">Numbered<BR/>frames</TD>
+        <TD BGCOLOR="#ffffff">image<BR/>manifest</TD>
+        <TD BGCOLOR="#fff7ed">Pose, depth,<BR/>normal, flow</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  reconstruction [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#c4b5fd">
+      <TR><TD BGCOLOR="#ede9fe" COLSPAN="5"><FONT POINT-SIZE="15"><B>3. Visual Reconstruction</B></FONT></TD></TR>
+      <TR>
+        <TD BGCOLOR="#ffffff">pipeline</TD>
+        <TD BGCOLOR="#ffffff">or reconstruct</TD>
+        <TD BGCOLOR="#ffffff">exp_runner.py</TD>
+        <TD BGCOLOR="#ffffff">surface<BR/>mesh</TD>
+        <TD BGCOLOR="#faf5ff">Room mesh</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  mesh_prep [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#fda4af">
+      <TR><TD BGCOLOR="#ffe4e6" COLSPAN="6"><FONT POINT-SIZE="15"><B>4. Mesh Prep</B></FONT></TD></TR>
+      <TR>
+        <TD BGCOLOR="#ffffff">optimize</TD>
+        <TD BGCOLOR="#ffffff">Load mesh</TD>
+        <TD BGCOLOR="#ffffff">Clean faces</TD>
+        <TD BGCOLOR="#ffffff">Decimate<BR/>if needed</TD>
+        <TD BGCOLOR="#fff1f2">Tri PLY<BR/>cache</TD>
+        <TD BGCOLOR="#ffffff">Bounds<BR/>+ stats</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  setup [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#fcd34d">
+      <TR><TD BGCOLOR="#fef3c7" COLSPAN="5"><FONT POINT-SIZE="15"><B>5. Optimization Setup</B></FONT></TD></TR>
+      <TR>
+        <TD BGCOLOR="#ffffff">Merge config<BR/>+ flags</TD>
+        <TD BGCOLOR="#ffffff">Receiver<BR/>positions</TD>
+        <TD BGCOLOR="#ffffff">Frequency<BR/>+ TX power</TD>
+        <TD BGCOLOR="#ffffff">Candidate<BR/>AP grid</TD>
+        <TD BGCOLOR="#fffbeb">Backend<BR/>choice</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  evaluation [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#86efac">
+      <TR><TD BGCOLOR="#dcfce7" COLSPAN="5"><FONT POINT-SIZE="15"><B>6. Link Evaluation</B></FONT></TD></TR>
+      <TR>
+        <TD BGCOLOR="#f0fdf4"><B>Sionna RT</B></TD>
+        <TD BGCOLOR="#ffffff">Build scene</TD>
+        <TD BGCOLOR="#ffffff">Trace paths</TD>
+        <TD BGCOLOR="#ffffff">Path loss</TD>
+        <TD BGCOLOR="#ffffff">RX power</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#f0fdf4"><B>CPU fallback</B></TD>
+        <TD BGCOLOR="#ffffff">FSPL</TD>
+        <TD BGCOLOR="#ffffff">Mesh hits</TD>
+        <TD BGCOLOR="#ffffff">Penalty loss</TD>
+        <TD BGCOLOR="#ffffff">RX power</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  selection [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#a5b4fc">
+      <TR><TD BGCOLOR="#e0e7ff" COLSPAN="4"><FONT POINT-SIZE="15"><B>7. Selection</B></FONT></TD></TR>
+      <TR>
+        <TD BGCOLOR="#ffffff">Path loss<BR/>matrix</TD>
+        <TD BGCOLOR="#ffffff">Worst RX<BR/>per AP</TD>
+        <TD BGCOLOR="#ffffff">Mean loss<BR/>reported</TD>
+        <TD BGCOLOR="#eef2ff">Minimize<BR/>worst case</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  best [
+    shape=doublecircle,
+    style="filled",
+    label="Best AP\ncoordinate",
+    fillcolor="#dcfce7",
+    color="#16a34a",
+    penwidth=1.8,
+    width=1.12,
+    margin="0.08,0.05"
+  ];
+
+  outputs [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#d1d5db">
+      <TR><TD BGCOLOR="#f3f4f6" COLSPAN="5"><FONT POINT-SIZE="15"><B>8. Outputs</B></FONT></TD></TR>
+      <TR>
+        <TD BGCOLOR="#ffffff">Result<BR/>JSON</TD>
+        <TD BGCOLOR="#ffffff">Metrics<BR/>CSV</TD>
+        <TD BGCOLOR="#ffffff">Loss<BR/>heatmap</TD>
+        <TD BGCOLOR="#ffffff">Top-down<BR/>layout</TD>
+        <TD BGCOLOR="#ffffff">Console<BR/>summary</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  start -> sources;
+  sources:photos -> image_prep [label="photo path"];
+  image_prep -> reconstruction;
+  reconstruction -> mesh_prep;
+  sources:mesh -> mesh_prep [label="existing mesh path", style=dashed, color="#64748b", constraint=false];
+  mesh_prep -> setup;
+  setup -> evaluation [label="auto / sionna / fallback"];
+  evaluation -> selection;
+  selection -> best;
+  best -> outputs;
+}

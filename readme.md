@@ -9,6 +9,12 @@ This repository is the cleaned end-to-end program for the paper workflow:
 
 The optimizer uses NVIDIA Sionna RT when available. On machines without a GPU or Sionna, it automatically falls back to a CPU geometric model so the CLI, mesh handling, output files, and plots can still be tested.
 
+## Workflow Flowchart
+
+The diagram below shows the full image-to-AP-placement path, including the shortcut for users who already have a room mesh.
+
+![RTX WiFi Optimizer workflow](docs/wifi_optimizer_flow.svg)
+
 ## Repository Layout
 
 | Path | Purpose |
