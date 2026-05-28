@@ -1,0 +1,26 @@
+{
+  "frequency_hz": 5800000000.0,
+  "tx_power_dbm": 20.0,
+  "receivers": [
+    {"name": "Rx1", "position_m": [0.283, -0.139, 0.2]},
+    {"name": "Rx2", "position_m": [-0.481, 0.096, 0.125]},
+    {"name": "Rx3", "position_m": [-0.582, -0.312, 0.1]}
+  ],
+  "candidate_grid": {
+    "grid_size": [10, 10],
+    "z_m": 0.55,
+    "margin_m": 0.15
+  },
+  "mesh_max_faces": 50000,
+  "fallback_obstruction_loss_db": 9.0,
+  "sionna": {
+    "batch_size": 10,
+    "max_depth": 2,
+    "samples_per_src": 300000,
+    "max_num_paths_per_src": 250000,
+    "seed": 41,
+    "material_relative_permittivity": 4.5,
+    "material_conductivity": 0.02,
+    "material_thickness_m": 0.1
+  }
+}

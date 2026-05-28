@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "final-wifi-optimizer"
+version = "0.1.0"
+description = "End-to-end room mesh reconstruction wrapper and WiFi access-point placement optimizer"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "matplotlib",
+  "pillow",
+  "trimesh",
+]
+
+[project.optional-dependencies]
+sionna = [
+  "sionna==2.0.1",
+  "fast-simplification",
+  "psutil",
+  "tabulate",
+]
+
+[project.scripts]
+wifi-optimizer = "wifi_optimizer.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["wifi_optimizer*"]

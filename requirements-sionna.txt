@@ -1,0 +1,4 @@
+sionna==2.0.1
+fast-simplification
+psutil
+tabulate
