@@ -2,10 +2,9 @@
 
 This repository is the cleaned end-to-end program for the paper workflow:
 
-1. Use the integrated visual reconstruction backend to reconstruct a room mesh from a captured image sequence.
-2. Convert the mesh into a tracing-friendly triangular PLY cache.
-3. Sweep candidate WiFi access-point positions.
-4. Pick the AP coordinate that minimizes worst-case receiver path loss.
+![Entry points](docs/readme_entry_points.svg)
+
+Use the integrated reconstruction backend when starting from room photos, or skip straight to optimization when a `.ply` mesh already exists. The optimizer converts the mesh into a tracing-friendly cache, sweeps candidate AP positions, and picks the coordinate that minimizes worst-case receiver path loss.
 
 The optimizer uses NVIDIA Sionna RT when available. On machines without a GPU or Sionna, it automatically falls back to a CPU geometric model so the CLI, mesh handling, output files, and plots can still be tested.
 
@@ -62,6 +61,8 @@ python -m wifi_optimizer.cli optimize \
 ```
 
 Outputs:
+
+![Optimization outputs](docs/readme_outputs.svg)
 
 | File | Meaning |
 |---|---|
@@ -153,6 +154,8 @@ python -m wifi_optimizer.cli optimize \
 ```
 
 ## Backend Notes
+
+![Backend selection](docs/readme_backend_choice.svg)
 
 `sionna` backend:
 

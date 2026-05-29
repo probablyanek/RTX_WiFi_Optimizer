@@ -1,0 +1,43 @@
+digraph readme_entry_points {
+  graph [
+    bgcolor="transparent",
+    rankdir=LR,
+    splines=spline,
+    nodesep=0.42,
+    ranksep=0.54,
+    pad=0.12,
+    margin=0.04,
+    outputorder=edgesfirst
+  ];
+
+  node [
+    shape=rect,
+    style="rounded,filled",
+    fontname="Liberation Sans",
+    fontsize=12,
+    color="#94a3b8",
+    penwidth=1.4,
+    margin="0.12,0.08"
+  ];
+
+  edge [
+    color="#64748b",
+    arrowsize=0.7,
+    penwidth=1.2,
+    fontname="Liberation Sans",
+    fontsize=10,
+    fontcolor="#475569"
+  ];
+
+  photos [label="Room photos\n/ frames", fillcolor="#ecfeff", color="#06b6d4"];
+  prep [label="prepare-images", fillcolor="#ccfbf1", color="#14b8a6"];
+  recon [label="reconstruct\nor pipeline", fillcolor="#ede9fe", color="#8b5cf6"];
+  mesh [label="Room mesh", fillcolor="#eff6ff", color="#3b82f6"];
+  optimize [label="optimize", fillcolor="#fef3c7", color="#f59e0b"];
+  outputs [label="Best AP\n+ plots", fillcolor="#dcfce7", color="#22c55e"];
+
+  existing [label="Existing .ply", fillcolor="#f8fafc", color="#94a3b8"];
+
+  photos -> prep -> recon -> mesh -> optimize -> outputs;
+  existing -> mesh [label="skip reconstruction", style=dashed, color="#64748b"];
+}

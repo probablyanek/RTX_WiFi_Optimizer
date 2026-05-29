@@ -1,0 +1,43 @@
+digraph readme_backend_choice {
+  graph [
+    bgcolor="transparent",
+    rankdir=LR,
+    splines=spline,
+    nodesep=0.40,
+    ranksep=0.54,
+    pad=0.12,
+    margin=0.04,
+    outputorder=edgesfirst
+  ];
+
+  node [
+    shape=rect,
+    style="rounded,filled",
+    fontname="Liberation Sans",
+    fontsize=12,
+    color="#94a3b8",
+    penwidth=1.4,
+    margin="0.12,0.08"
+  ];
+
+  edge [
+    color="#64748b",
+    arrowsize=0.7,
+    penwidth=1.2,
+    fontname="Liberation Sans",
+    fontsize=10,
+    fontcolor="#475569"
+  ];
+
+  auto [label="--backend auto", fillcolor="#f8fafc"];
+  importable [shape=diamond, label="Sionna RT\nimportable?", fillcolor="#e0f2fe", color="#38bdf8", margin="0.10,0.06"];
+  sionna [label="sionna\nGPU ray tracing", fillcolor="#dcfce7", color="#22c55e"];
+  fallback [label="fallback\nCPU sanity check", fillcolor="#ffedd5", color="#fb923c"];
+  result [label="Same output files", fillcolor="#ede9fe", color="#8b5cf6"];
+
+  auto -> importable;
+  importable -> sionna [label="yes"];
+  importable -> fallback [label="no"];
+  sionna -> result;
+  fallback -> result;
+}
