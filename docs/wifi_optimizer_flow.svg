@@ -8,70 +8,69 @@
  viewBox="7.20 7.20 593.74 1202.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(18.72 1190.72)">
 <title>wifi_optimizer_flow</title>
-<polygon fill="#ffffff" stroke="transparent" points="-11.52,11.52 -11.52,-1183.52 575.02,-1183.52 575.02,11.52 -11.52,11.52"/>
-<text text-anchor="middle" x="281.75" y="-1147.2" font-family="Liberation Sans" font-size="26.00">RTX WiFi Optimizer Flow</text>
+<text text-anchor="middle" x="281.75" y="-1147.2" font-family="Liberation Sans" font-size="26.00" fill="#2563eb">RTX WiFi Optimizer Flow</text>
 <!-- start&#45;&gt;sources -->
 <g id="edge1" class="edge">
 <title>start&#45;&gt;sources</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M362,-1098.6C362,-1090.35 362,-1080.05 362,-1069.76"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="364.52,-1069.49 362,-1062.29 359.48,-1069.49 364.52,-1069.49"/>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M362,-1098.6C362,-1090.35 362,-1080.05 362,-1069.76"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="364.52,-1069.49 362,-1062.29 359.48,-1069.49 364.52,-1069.49"/>
 </g>
 <!-- sources&#45;&gt;image_prep -->
 <g id="edge2" class="edge">
 <title>sources:photos&#45;&gt;image_prep</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M206,-983C206,-970.49 206,-956.94 206,-944.43"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="208.52,-944.4 206,-937.2 203.48,-944.4 208.52,-944.4"/>
-<text text-anchor="middle" x="228" y="-957.8" font-family="Liberation Sans" font-size="9.00" fill="#334155">photo path</text>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M206,-983C206,-970.49 206,-956.94 206,-944.43"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="208.52,-944.4 206,-937.2 203.48,-944.4 208.52,-944.4"/>
+<text text-anchor="middle" x="228" y="-957.8" font-family="Liberation Sans" font-size="9.00" fill="#64748b">photo path</text>
 </g>
 <!-- sources&#45;&gt;mesh_prep -->
 <g id="edge5" class="edge">
 <title>sources:mesh&#45;&gt;mesh_prep</title>
 <path fill="none" stroke="#64748b" stroke-width="1.2" stroke-dasharray="5,2" d="M287,-983C287,-920.03 384.41,-988.25 421,-937 436.2,-915.71 429.4,-752.5 415,-733 405.36,-719.95 393.25,-709.15 379.73,-700.21"/>
 <polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="380.86,-697.94 373.43,-696.23 378.18,-702.2 380.86,-697.94"/>
-<text text-anchor="middle" x="467.5" y="-832.8" font-family="Liberation Sans" font-size="9.00" fill="#334155">existing mesh path</text>
+<text text-anchor="middle" x="467.5" y="-832.8" font-family="Liberation Sans" font-size="9.00" fill="#64748b">existing mesh path</text>
 </g>
 <!-- image_prep&#45;&gt;reconstruction -->
 <g id="edge3" class="edge">
 <title>image_prep&#45;&gt;reconstruction</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M206,-857.92C206,-845.79 206,-832.27 206,-819.66"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="208.52,-819.57 206,-812.37 203.48,-819.57 208.52,-819.57"/>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M206,-857.92C206,-845.79 206,-832.27 206,-819.66"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="208.52,-819.57 206,-812.37 203.48,-819.57 208.52,-819.57"/>
 </g>
 <!-- reconstruction&#45;&gt;mesh_prep -->
 <g id="edge4" class="edge">
 <title>reconstruction&#45;&gt;mesh_prep</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M206,-732.9C206,-723.43 206,-713.2 206,-703.42"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="208.52,-703.26 206,-696.06 203.48,-703.26 208.52,-703.26"/>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M206,-732.9C206,-723.43 206,-713.2 206,-703.42"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="208.52,-703.26 206,-696.06 203.48,-703.26 208.52,-703.26"/>
 </g>
 <!-- mesh_prep&#45;&gt;setup -->
 <g id="edge6" class="edge">
 <title>mesh_prep&#45;&gt;setup</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M206,-616.9C206,-607.43 206,-597.2 206,-587.42"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="208.52,-587.26 206,-580.06 203.48,-587.26 208.52,-587.26"/>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M206,-616.9C206,-607.43 206,-597.2 206,-587.42"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="208.52,-587.26 206,-580.06 203.48,-587.26 208.52,-587.26"/>
 </g>
 <!-- setup&#45;&gt;evaluation -->
 <g id="edge7" class="edge">
 <title>setup&#45;&gt;evaluation</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M206,-500.97C206,-489.01 206,-475.58 206,-462.72"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="208.52,-462.43 206,-455.23 203.48,-462.43 208.52,-462.43"/>
-<text text-anchor="middle" x="251.5" y="-475.8" font-family="Liberation Sans" font-size="9.00" fill="#334155">auto / sionna / fallback</text>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M206,-500.97C206,-489.01 206,-475.58 206,-462.72"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="208.52,-462.43 206,-455.23 203.48,-462.43 208.52,-462.43"/>
+<text text-anchor="middle" x="251.5" y="-475.8" font-family="Liberation Sans" font-size="9.00" fill="#64748b">auto / sionna / fallback</text>
 </g>
 <!-- evaluation&#45;&gt;selection -->
 <g id="edge8" class="edge">
 <title>evaluation&#45;&gt;selection</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M206,-357.94C206,-348.25 206,-338.06 206,-328.42"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="208.52,-328.38 206,-321.18 203.48,-328.38 208.52,-328.38"/>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M206,-357.94C206,-348.25 206,-338.06 206,-328.42"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="208.52,-328.38 206,-321.18 203.48,-328.38 208.52,-328.38"/>
 </g>
 <!-- selection&#45;&gt;best -->
 <g id="edge9" class="edge">
 <title>selection&#45;&gt;best</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M206,-241.86C206,-232.56 206,-222.48 206,-212.71"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="208.52,-212.51 206,-205.31 203.48,-212.51 208.52,-212.51"/>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M206,-241.86C206,-232.56 206,-222.48 206,-212.71"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="208.52,-212.51 206,-205.31 203.48,-212.51 208.52,-212.51"/>
 </g>
 <!-- best&#45;&gt;outputs -->
 <g id="edge10" class="edge">
 <title>best&#45;&gt;outputs</title>
-<path fill="none" stroke="#475569" stroke-width="1.2" d="M206,-115.86C206,-106.24 206,-96.03 206,-86.32"/>
-<polygon fill="#475569" stroke="#475569" stroke-width="1.2" points="208.52,-86.22 206,-79.02 203.48,-86.22 208.52,-86.22"/>
+<path fill="none" stroke="#64748b" stroke-width="1.2" d="M206,-115.86C206,-106.24 206,-96.03 206,-86.32"/>
+<polygon fill="#64748b" stroke="#64748b" stroke-width="1.2" points="208.52,-86.22 206,-79.02 203.48,-86.22 208.52,-86.22"/>
 </g>
 <!-- start -->
 <g id="node1" class="node">

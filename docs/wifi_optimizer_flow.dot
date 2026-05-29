@@ -4,7 +4,8 @@ digraph wifi_optimizer_flow {
     labelloc="t",
     fontsize=26,
     fontname="Liberation Sans",
-    bgcolor="#ffffff",
+    fontcolor="#2563eb",
+    bgcolor="transparent",
     rankdir=TB,
     splines=spline,
     nodesep=0.42,
@@ -24,8 +25,8 @@ digraph wifi_optimizer_flow {
   edge [
     fontname="Liberation Sans",
     fontsize=9,
-    color="#475569",
-    fontcolor="#334155",
+    color="#64748b",
+    fontcolor="#64748b",
     arrowsize=0.72,
     penwidth=1.2
   ];
