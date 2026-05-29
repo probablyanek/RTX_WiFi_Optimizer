@@ -4,7 +4,7 @@ digraph wifi_optimizer_flow {
     labelloc="t",
     fontsize=26,
     fontname="Liberation Sans",
-    fontcolor="#2563eb",
+    fontcolor="#ffffff",
     bgcolor="transparent",
     rankdir=TB,
     splines=spline,

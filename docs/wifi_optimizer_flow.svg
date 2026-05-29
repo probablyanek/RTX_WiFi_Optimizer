@@ -8,7 +8,7 @@
  viewBox="7.20 7.20 593.74 1202.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(18.72 1190.72)">
 <title>wifi_optimizer_flow</title>
-<text text-anchor="middle" x="281.75" y="-1147.2" font-family="Liberation Sans" font-size="26.00" fill="#2563eb">RTX WiFi Optimizer Flow</text>
+<text text-anchor="middle" x="281.75" y="-1147.2" font-family="Liberation Sans" font-size="26.00" fill="#ffffff">RTX WiFi Optimizer Flow</text>
 <!-- start&#45;&gt;sources -->
 <g id="edge1" class="edge">
 <title>start&#45;&gt;sources</title>
